@@ -46,6 +46,7 @@ class ApplicationController < Sinatra::Base
       redirect_to '/account'
     else 
       redirect_to '/failure'
+    end
   end
 
   get "/failure" do
