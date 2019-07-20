@@ -18,11 +18,11 @@ class ApplicationController < Sinatra::Base
 
   post "/signup" do
     #your code here
-    @username = params[:username]
-    @password = params[:password]
-    if @username.length > 0 && @password.length > 0
-      @user = User.create(username: @username, password: @password)
-      session[:user_id] = @user.id
+    username = params[:username]
+    password = params[:password]
+    if username.length > 0 && password.length > 0
+      user = User.create(username: username, password: password)
+      session[:user_id] = user.id
       redirect to '/login'
     else 
       redirect to '/failure'
