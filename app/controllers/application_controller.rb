@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
     if @username.length > 0 && @password.length > 0
       @user = User.create(username: @username, password: @password)
       session[:user_id] = @user.id
-      redirect to '/account'
+      redirect to '/login'
     else 
       redirect to '/failure'
     end
